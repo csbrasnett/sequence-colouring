@@ -2,7 +2,7 @@
 
 Make quick pictures of sequences in fasta files using [matplotlib](https://matplotlib.org/)
 
-
+Work in progress. Seems to require matplotlib=3.9 to work on reasonable timescales
 
 ## example
 

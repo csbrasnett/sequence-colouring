@@ -278,22 +278,22 @@ if __name__ == '__main__':
     
     seq, lines_out = read_fasta(args.fasta, args.line_wrap, 
                                 args.beginning, args.end)
-    
+
     #correct the lower and upper annotations if beginning and end have been given
     if (args.beginning is not None) and (args.end is not None):
-        lower = args.lower - 1 - args.beginning - 1 
-        upper = args.upper - 1 - args.beginning - 1
+        lower = args.lower - args.beginning
+        upper = args.upper - args.beginning + 1
         count = args.beginning - 1
     else:
         count = 0
         if (args.lower is not None) and (args.upper is not None):
             lower = args.lower - 1
-            upper = args.upper - 1
+            upper = args.upper
         else:
             lower = None
             upper = None
-    
-    colours = make_colour_list(seq, cols, args.line_wrap, 
+
+    colours = make_colour_list(seq, cols, args.line_wrap,
                                lower=lower, upper = upper,
                               )
     
